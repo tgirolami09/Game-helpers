@@ -1,3 +1,9 @@
+import os
+
+scriptAbsolutePath = os.path.dirname(os.path.abspath(__file__))
+fileRelativePath = "../Wordlists/letter_boxed_words.txt"
+usablePath = os.path.join(scriptAbsolutePath, fileRelativePath)
+
 class colors():
     GREEN = "\x1b[32m"
     RED = "\x1b[31m"
@@ -44,7 +50,7 @@ def nWordSolution(amoutOfWords:int,wordList:list,wordListByLetter:dict[str, list
 
     return result
 
-with open("./letter_boxed_words.txt","r") as file:
+with open(usablePath,"r") as file:
     words=file.read().splitlines()
 
 alphabet = set("abcdefghijklmnopqrstuvwxyz")
